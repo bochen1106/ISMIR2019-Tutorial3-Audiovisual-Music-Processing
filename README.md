@@ -10,14 +10,13 @@ Bochen Li, Akira Maezawa, and Zhiyao Duan, "**Skeleton plays piano: online gener
 
 ## Requirements
 
-- Assuming conda environment
-
-`conda install ffmpeg`
-`pip install chainer==3.0.0`
-`conda install -c conda-forge numpy`
-`pip install opencv-python`
-`pip install pretty_midi`
-`pip install librosa`
+Assuming conda environment
+- `conda install ffmpeg`
+- `pip install chainer==3.0.0`
+- `conda install -c conda-forge numpy`
+- `pip install opencv-python`
+- `pip install pretty_midi`
+- `pip install librosa`
 
 ## Folder Structure
 
