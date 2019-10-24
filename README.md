@@ -29,7 +29,7 @@ Assuming conda environment
 `python run.py "example/Mozart_K545_Ch2.mid"`
 
 It will generate the output video in the `output` folder
+(A pre-generated video is already saved there)
 
-## Sample Result
 
-![](output/Mozart_K545_Ch2.mp4)
+![alt text](https://www.youtube.com/watch?v=JJcwV9cZiUY)
