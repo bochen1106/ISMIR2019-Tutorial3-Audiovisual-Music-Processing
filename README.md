@@ -10,7 +10,7 @@ Bochen Li, Akira Maezawa, and Zhiyao Duan, "**Skeleton plays piano: online gener
 
 ## Requirements
 
-Assuming conda environment
+- Assuming conda environment
 
 `conda install ffmpeg`
 `pip install chainer==3.0.0`
