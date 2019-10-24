@@ -6,7 +6,7 @@
 - This is a simplified version of the paper:
 Bochen Li, Akira Maezawa, and Zhiyao Duan, "**Skeleton plays piano: online generation of pianist body movements from MIDI performance**", in *Proc., International Society for Music Information Retrieval*, 2018.
 - The code will generate a pianist body skeleton movements as a video file given input of MIDI files.
-- More details can be found [HERE](http://www.ece.rochester.edu/projects/air/projects/skeletonpianist.html).
+- More details and demos can be found [HERE](http://www.ece.rochester.edu/projects/air/projects/skeletonpianist.html).
 
 ## Requirements
 
@@ -31,7 +31,3 @@ Assuming conda environment
 It will generate the output video in the `output` folder
 (A pre-generated video is already saved there)
 
-
-User's homemade selfie  |  Generated 1  |  Generated 2  |  Generated 3  |  Generated 4 
-:-------------------------:|:-------------------------: |:-------------------------: |:-------------------------:|:-------------------------:
-![](output/Mozart_K545_Ch2.mp4)  |  ![](result_offline/sample/remix_0001.mp4) |  ![](result_offline/sample/remix_0002.mp4) |  ![](result_offline/sample/remix_0003.mp4) |  ![](result_offline/sample/remix_0005.mp4)
