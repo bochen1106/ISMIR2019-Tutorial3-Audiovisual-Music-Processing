@@ -32,6 +32,4 @@ It will generate the output video in the `output` folder
 
 ## Sample Result
 
-<video width="320" height="240" controls>
-  <source src="output/Mozart_K545_Ch2.mp4" type="video/mp4">
-</video>
+![](output/Mozart_K545_Ch2.mp4)
