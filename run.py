@@ -76,7 +76,7 @@ def main(filename_midi):
     wave_out = function.syn_midi(notes, fs=44100)
     librosa.output.write_wav(filename_audio, wave_out, 44100)
     function.add_audio_to_video(filename_video, filename_audio)
-    os.remove(filename_audio)
+    # os.remove(filename_audio)
     
     
 

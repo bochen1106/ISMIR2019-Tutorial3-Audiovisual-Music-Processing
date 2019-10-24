@@ -294,8 +294,8 @@ def add_audio_to_video(filename_video, filename_audio, filename_video_out=None):
 
     os.system(command)
     
-    if replace:
-        os.remove(filename_video)
+    # if replace:
+    #     os.remove(filename_video)
     
 
 '''
