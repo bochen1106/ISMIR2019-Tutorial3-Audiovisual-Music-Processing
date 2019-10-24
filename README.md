@@ -24,6 +24,12 @@ Assuming conda environment
 
 `pip install librosa`
 
+## Folder Structure
+
+- `data` Model files, background canvas image, and scaling factor for skeleton plot
+- `example` Some sample MIDI files to try out
+- `output` The output folder for the generated videos
+
 ## How to Run
 
 `python run.py "example/Mozart_K545_Ch2.mid"`
