@@ -11,16 +11,23 @@ Bochen Li, Akira Maezawa, and Zhiyao Duan, "**Skeleton plays piano: online gener
 ## Requirements
 
 Assuming conda environment
+
 `conda install ffmpeg`
+
 `pip install chainer==3.0.0`
+
 `conda install -c conda-forge numpy`
+
 `pip install opencv-python`
+
 `pip install pretty_midi`
+
 `pip install librosa`
 
 ## How to Run
 
 `python run.py "example/Mozart_K545_Ch2.mid"`
+
 It will generate the output video in the `output` folder
 
 ## Sample Result
