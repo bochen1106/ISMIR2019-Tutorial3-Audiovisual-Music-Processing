@@ -82,10 +82,11 @@ def main(filename_midi):
 
 
 if __name__ == "__main__":
-
-    filename = "/Volumes/BochenPhoto/Bochen_Harddrive/YamahaProject/dataset/original/song_wo_words/1-duet-grand-1-trim.mid"
-    filename = "example/song_wo_words.mid"
-    filename_midi = filename
+    
+    if len(sys.argv) > 1:
+        filename_midi = sys.argv[1]
+    else:
+        filename_midi = "example/Mozart_K545_Ch2.mid"
     
     main(filename_midi)
 
