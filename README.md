@@ -32,4 +32,6 @@ It will generate the output video in the `output` folder
 (A pre-generated video is already saved there)
 
 
-![alt text](https://www.youtube.com/watch?v=JJcwV9cZiUY)
+User's homemade selfie  |  Generated 1  |  Generated 2  |  Generated 3  |  Generated 4 
+:-------------------------:|:-------------------------: |:-------------------------: |:-------------------------:|:-------------------------:
+![](output/Mozart_K545_Ch2.mp4)  |  ![](result_offline/sample/remix_0001.mp4) |  ![](result_offline/sample/remix_0002.mp4) |  ![](result_offline/sample/remix_0003.mp4) |  ![](result_offline/sample/remix_0005.mp4)
