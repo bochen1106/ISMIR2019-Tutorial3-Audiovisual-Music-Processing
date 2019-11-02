@@ -1,14 +1,13 @@
 name: ismir2019
+channels:
+  - conda-forge
+  - defaults
 dependencies:
-  - scipy
-  - numpy
-  - matplotlib
   - ffmpeg
   - jupyter
   - pip:
-    - resampy
     - librosa
-    - chainer==3.0.0
+    - chainer=3.0.0
     - opencv-python
     - pretty_midi
     - oct2py
