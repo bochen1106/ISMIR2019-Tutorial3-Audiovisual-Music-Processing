@@ -7,7 +7,7 @@ dependencies:
   - jupyter
   - pip:
     - librosa
-    - chainer=3.0.0
+    - chainer==3.0.0
     - opencv-python
     - pretty_midi
     - oct2py
