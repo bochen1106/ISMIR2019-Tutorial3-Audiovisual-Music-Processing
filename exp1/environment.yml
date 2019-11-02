@@ -1,0 +1,10 @@
+name: ismir2019
+dependencies:
+  - scipy
+  - numpy
+  - matplotlib
+  - pip:
+    - resampy
+    - librosa
+    - oct2py
+
