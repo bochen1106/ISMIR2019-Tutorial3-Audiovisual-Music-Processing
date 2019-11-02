@@ -11,6 +11,7 @@ import math
 import cv2
 import pretty_midi
 
+FPS = 30        # frame rate (frame per second)
 
 '''
 read a MIDI file into a note matrix
@@ -26,7 +27,7 @@ output:
     
     - pianoroll:    pianoroll representation, shape=(128, n_frame)
 '''    
-def get_pianoroll(notes, frame_hop=1/30):
+def get_pianoroll(notes, frame_hop=1/FPS):
 
     onset = notes[:, 0]
     offset = notes[:, 1]
@@ -167,6 +168,10 @@ def plot_pose(pose, img=None, plot_hand=True):
 '''
 read a MIDI file into a note matrix
 
+input:
+    
+    - filename: the filename (full path) of the MIDI file
+    
 output: 
     
     - notes:    shape=(n, 4)
@@ -186,6 +191,31 @@ def read_midi(filename):
     
     return notes
 
+
+'''
+write a note matrix into a MIDI file
+
+input: 
+    
+    - notes:    shape=(n, 4)
+                each row represents: onset(sec), offset(sec), pitch(MIDInumber), velocity
+                
+output:
+    
+    - filename: the filename (full path) of the MIDI file
+    
+'''
+def write_midi(filename, notes):
+    
+    midi = pretty_midi.PrettyMIDI()
+    piano = pretty_midi.Instrument(program=pretty_midi.instrument_name_to_program("Acoustic Grand Piano"))
+    
+    for note in notes:
+        note = pretty_midi.Note(velocity=int(note[3]), pitch=int(note[2]), start=note[0], end=note[1])
+        piano.notes.append(note)
+        
+    midi.instruments.append(piano)
+    midi.write(filename)
 
 
 '''
@@ -280,22 +310,15 @@ def syn_midi(notes, fs=44100, real_duration=True, real_volume=True):
 add soundtrack to video (call system command line operation, ffmpeg required)
 '''
 def add_audio_to_video(filename_video, filename_audio, filename_video_out=None):
-    
-    replace = False
+        
     if not filename_video_out:
-        replace = True
-        filename_tmp = filename_video.rsplit(".", 1)[0] + "_tmp.mp4"
-        os.rename(filename_video, filename_tmp)
-        filename_video_out = filename_video
-        filename_video = filename_tmp
+        filename_video_out = filename_video.rsplit(".", 1)[0] + "_final.mp4"
         
     command = 'ffmpeg  -i "%s" -i "%s" -c:v copy  -c:a aac  "%s" -strict -2  -shortest -y -v 0' % (
             filename_audio, filename_video, filename_video_out)
 
     os.system(command)
-    
-    # if replace:
-    #     os.remove(filename_video)
+
     
 
 '''
@@ -308,7 +331,7 @@ def write_video_pose_background(filename, y, notes, img):
     
 #    fourcc = cv2.VideoWriter_fourcc(*'H264')
     fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
-    vid_out = cv2.VideoWriter(filename, fourcc, 30, (720, 480))
+    vid_out = cv2.VideoWriter(filename, fourcc, FPS, (720, 480))
 
     n_frame = len(y)
     for fnum in range(n_frame):
@@ -316,8 +339,36 @@ def write_video_pose_background(filename, y, notes, img):
         vid_out.write(canvas[:,:,[2,1,0]])
     vid_out.release()
     
+'''
+modify the tempo of a given MIDI file
+
+Input:
     
+    - scale:        scale factor of the tempo, e.g., scale=1.2 will change tempo from 100 BPM to 120 BPM
+
+'''
+def modify_midi_tempo(filename_in, filename_out, scale):
     
+    notes = read_midi(filename_in)
+    notes[:, :2] /= scale
+    write_midi(filename_out, notes)    
+
+
+'''
+modify the pitch for all the notes of a given MIDI file
+
+Input:
+    
+    - semitone:     the difference of pitch change, e.g., semitone=12 will rise one octave of the piece
+
+'''
+def modify_midi_pitch(filename_in, filename_out, semitone):
+    
+    notes = read_midi(filename_in)
+    notes[:, 2] += semitone
+    notes[:, 2] = [x if x<108 else 108 for x in notes[:, 2]]
+    notes[:, 2] = [x if x>21 else 21 for x in notes[:, 2]]
+    write_midi(filename_out, notes)      
                        
                        
                        

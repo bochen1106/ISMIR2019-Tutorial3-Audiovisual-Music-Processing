@@ -31,3 +31,7 @@ Assuming conda environment
 It will generate the output video in the `output` folder
 (A pre-generated video is already saved there)
 
+Also start your code in `try_more_variations.py` to observe how the generated skeleton movements differ by modifying some MIDI note properties.
+
+You can also try creating some MIDI input (e.g., Logic Pro) and feed into the model.
+
