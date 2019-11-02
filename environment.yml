@@ -1,0 +1,13 @@
+name: ismir2019
+dependencies:
+  - scipy
+  - numpy
+  - matplotlib
+  - ffmpeg
+  - pip:
+    - resampy
+    - librosa
+    - chainer==3.0.0
+    - opencv-python
+    - pretty_midi
+    - oct2py
