@@ -9,7 +9,7 @@ Bochen Li, Akira Maezawa, and Zhiyao Duan, "**Skeleton plays piano: online gener
 - More details and demos can be found [HERE](http://www.ece.rochester.edu/projects/air/projects/skeletonpianist.html).
 
 ## Requirements
-
+(skip this if already installed environment.yml in root folder)
 Assuming conda environment
 - `conda install ffmpeg`
 - `pip install chainer==3.0.0`
