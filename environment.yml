@@ -4,6 +4,7 @@ dependencies:
   - numpy
   - matplotlib
   - ffmpeg
+  - jupyter
   - pip:
     - resampy
     - librosa
