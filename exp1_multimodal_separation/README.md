@@ -1,6 +1,6 @@
 # Case Study 1: Audio source separation using motion information
 
-This case study will introduce participants to audio-visual source separation in the Nonnegative Matrix Factorization (NMF) framework. Specifically, we provide an illustrative example based on (Parekh et al. 2017). This utilizes a recording from the URMP dataset (). Motion segments were extracted using a multicuts algorithm ().
+This case study will introduce participants to audio-visual source separation in the Nonnegative Matrix Factorization (NMF) framework. Specifically, we provide an illustrative example based on (Parekh et al. 2017). This utilizes a recording from the URMP dataset (Li et al. 2018). Motion segments were extracted using a multicuts algorithm ((Keuper et al. 2015).
 
 ## Setup
 If you have setup your environment as described in repository's ```README.md``` you can simply start the jupyter server and open the notebook. If not, please verify that you have GNU Octave and python packages listed in ```requirements.txt```, especially ```oct2py```, installed.
