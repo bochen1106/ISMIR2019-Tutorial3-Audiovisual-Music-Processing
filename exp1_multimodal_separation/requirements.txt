@@ -1,0 +1,3 @@
+librosa
+jupyter
+oct2py
