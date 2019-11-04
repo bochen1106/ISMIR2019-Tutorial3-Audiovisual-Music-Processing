@@ -13,7 +13,7 @@ filename_in = "example/Bach_FrenchSuite_1.mid"
 filename_out = "example/Bach_FrenchSuite_1_tempo1.5.mid"
 function.modify_midi_tempo(filename_in, filename_out, 1.5)
 
-run.main(filename_in)
+run.main(filename_out)
 
 
 '''
