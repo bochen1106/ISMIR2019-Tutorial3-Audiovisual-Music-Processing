@@ -9,4 +9,5 @@ dependencies:
     - chainer==3.0.0
     - opencv-python
     - pretty_midi
+    - matplotlib
     - oct2py
