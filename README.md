@@ -11,7 +11,7 @@ It is highly recommended to use a separate Miniconda/Anaconda environment to run
       - Linux (Package manager): ```apt install octave or yum install octave```
       - Linux or MacOS (Homebrew): ```brew install octave```
       - Windows: Get installer from aforementioned download link
-	*Note*: Please ensure that GNU Octave is in your PATH. For Windows users, it might be easier to set the OCTAVE_EXECUTABLE environment variable with the path to your executable. For example, this could be: ```C:\Octave-5.1.0.0\mingw64\bin\octave-cli.exe```
+**Note**: Please ensure that GNU Octave is in your PATH. For Windows users, it might be easier to set the OCTAVE_EXECUTABLE environment variable with the path to your executable. For example, this could be: ```C:\Octave-5.1.0.0\mingw64\bin\octave-cli.exe```
 3. Get the code
    ```sh
    git clone <repository_link>
@@ -20,12 +20,12 @@ It is highly recommended to use a separate Miniconda/Anaconda environment to run
    ```sh
    conda env create -f environment.yml
    ```
-   *Note* For anyone encountering the ```PackageNotFoundError```:
-      - Remove the line "-ffmpeg" from environment.yml
-	  - After creating and activating ismir2019 environment, do 
-	    ```sh
-		conda install -c conda-forge ffmpeg
-		```
+   **Note**: For anyone encountering the ```PackageNotFoundError``` with ```ffmpeg``` install:
+      - First, remove the line ```- ffmpeg``` from environment.yml
+      - After creating and activating ismir2019 environment, do 
+	```sh
+        conda install -c conda-forge ffmpeg
+	```
 5. Activate the environment
    ```sh
    conda activate ismir2019
