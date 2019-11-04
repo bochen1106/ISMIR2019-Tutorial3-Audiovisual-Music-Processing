@@ -1,6 +1,7 @@
 name: ismir2019
 channels:
   - defaults
+  - conda-forge
 dependencies:
   - ffmpeg
   - jupyter
